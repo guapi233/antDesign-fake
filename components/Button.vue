@@ -7,6 +7,7 @@
     'is-circle': circle,
     'is-disabled': disabled
   }]"
+    :style="fullWidth"
     :disabled="disabled"
     @click="handleClick"
   >
@@ -62,11 +63,21 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 适配父元素宽度
+    block: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     // 点击事件中转
     handleClick(event) {
       this.$emit("click", event);
+    },
+  },
+  computed: {
+    fullWidth() {
+      return this.block ? { width: "100%" } : {};
     },
   },
 };

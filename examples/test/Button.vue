@@ -54,6 +54,10 @@
     <blockarea title="加载中状态">
       <c-button type="primary" @click="loading=!loading" :loading="loading" icon="calendar">点击加载</c-button>
     </blockarea>
+
+    <blockarea title="父元素宽度适配">
+      <c-button type="primary" block>按钮</c-button>
+    </blockarea>
   </div>
 </template>
 
