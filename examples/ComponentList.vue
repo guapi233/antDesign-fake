@@ -1,0 +1,22 @@
+<template>
+  <div class="componet-list">
+    <router-link
+      v-for="component in componentList"
+      :key="component"
+      :to="{ name: component }"
+    >{{ component }}</router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      componentList: ["Button"],
+    };
+  },
+};
+</script>
+
+<style>
+</style>
