@@ -1,7 +1,7 @@
 <template>
   <button
     class="c-button"
-    :class="[`c-button--${type}`, {
+    :class="[`c-button--${type}`, `c-button--size__${size}`, {
     'is-plain': plain,
     'is-ghost': ghost,
     'is-round': round,
@@ -74,6 +74,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 按钮尺寸
+    size: {
+      type: String,
+      default: "default",
+    },
   },
   methods: {
     // 点击事件中转
@@ -92,10 +97,7 @@ export default {
 <style lang="scss" scoped>
 /* 基础样式 */
 .c-button {
-  min-width: 42px;
-  min-height: 42px;
   display: inline-block;
-  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
   background: #fff;
@@ -110,7 +112,6 @@ export default {
   font-weight: 500;
   user-select: none;
   padding: 12px 20px;
-  font-size: 14px;
   border-radius: 4px;
 
   &:hover,
@@ -350,7 +351,7 @@ export default {
 /* 圆形按钮 */
 .c-button.is-circle {
   border-radius: 50%;
-  padding: 12px;
+  padding: 0;
 }
 
 /* 添加icon后调整与文本的间距 */
@@ -473,5 +474,27 @@ export default {
 .loading-circle {
   display: inline-block;
   animation: loadingCircle 1s linear infinite;
+}
+
+// 尺寸样式
+.c-button--size__large {
+  font-size: 16px;
+  height: 42px;
+  min-width: 42px;
+  line-height: 1;
+}
+
+.c-button--size__default {
+  font-size: 14px;
+  height: 32px;
+  min-width: 32px;
+  line-height: 0.5;
+}
+
+.c-button--size__small {
+  font-size: 12px;
+  height: 24px;
+  min-width: 24px;
+  line-height: 0.2;
 }
 </style>

@@ -52,6 +52,12 @@
       <c-button type="warning" icon="eye"></c-button>
     </blockarea>
 
+    <blockarea title="不同尺寸的按钮">
+      <c-button type="primary" icon="camera" size="large">照相机</c-button>
+      <c-button type="success" icon="calendar">日历</c-button>
+      <c-button type="warning" icon="eye" size="small">眼睛</c-button>
+    </blockarea>
+
     <blockarea title="禁用按钮">
       <c-button type="primary" disabled>p</c-button>
       <c-button type="danger" circle disabled>p</c-button>
