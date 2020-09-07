@@ -1,7 +1,8 @@
 <template>
   <div id="app">
+    <router-view></router-view>
     <!-- 😁:Checkbox -->
-    <div>
+    <!-- <div>
       <c-checkbox v-model="check">选择</c-checkbox>
       {{ check }}
     </div>
@@ -12,7 +13,7 @@
         <c-checkbox label="2">？</c-checkbox>
       </c-checkbox-group>
       {{ check2 }}
-    </div>
+    </div>-->
 
     <!-- 😁:Radio -->
     <!-- <div>
