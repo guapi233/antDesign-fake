@@ -10,7 +10,12 @@
     :disabled="disabled"
     @click="handleClick"
   >
-    <i v-if="icon" :class="`icon-${ icon }`"></i>
+    <!-- 加载图标 -->
+    <div v-if="loading" class="icon- loading-circle">
+      <i class="icon-loading"></i>
+    </div>
+
+    <i v-if="icon && !loading" :class="`icon-${ icon }`"></i>
 
     <span v-if="$slots.default">
       <slot></slot>
@@ -52,6 +57,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 按钮加载状态
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     // 点击事件中转
@@ -65,7 +75,8 @@ export default {
 <style lang="scss" scoped>
 /* 基础样式 */
 .c-button {
-  min-width: 40px;
+  min-width: 42px;
+  min-height: 42px;
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -350,5 +361,21 @@ export default {
   color: #f9a7a7;
   background-color: #fef0f0;
   border-color: #fde2e2;
+}
+
+// 旋转动画
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-circle {
+  display: inline-block;
+  animation: loadingCircle 1s linear infinite;
 }
 </style>

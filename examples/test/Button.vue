@@ -50,11 +50,20 @@
     <blockarea title="点击事件">
       <c-button type="primary" @click="burst">弹出！</c-button>
     </blockarea>
+
+    <blockarea title="加载中状态">
+      <c-button type="primary" @click="loading=!loading" :loading="loading" icon="calendar">点击加载</c-button>
+    </blockarea>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      loading: false,
+    };
+  },
   methods: {
     burst() {
       alert("hello");
