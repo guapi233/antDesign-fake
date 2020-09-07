@@ -76,7 +76,7 @@ export default {
   text-align: center;
   box-sizing: border-box;
   outline: none;
-  margin: 0;
+  margin: 0 8px 12px 0;
   transition: 0.1s;
   font-weight: 500;
   user-select: none;
