@@ -65,6 +65,7 @@ export default {
 <style lang="scss" scoped>
 /* 基础样式 */
 .c-button {
+  min-width: 40px;
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
