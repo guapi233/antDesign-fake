@@ -6,7 +6,7 @@
     'is-ghost': ghost,
     'is-round': round,
     'is-circle': circle,
-    'is-disabled': disabled
+    'is-disabled': disabled || loading
   }]"
     :style="fullWidth"
     :disabled="disabled"
@@ -83,7 +83,7 @@ export default {
   methods: {
     // 点击事件中转
     handleClick(event) {
-      this.$emit("click", event);
+      !this.loading && this.$emit("click", event);
     },
   },
   computed: {
