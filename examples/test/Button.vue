@@ -20,6 +20,16 @@
       <c-button type="info" plain>info</c-button>
     </blockarea>
 
+    <blockarea title="幽灵按钮">
+      <div class="backboad" style="background: rgb(190, 200, 200);padding:15px 15px 15px 0;">
+        <c-button type="primary" ghost>primary</c-button>
+        <c-button type="success" ghost>success</c-button>
+        <c-button type="warning" ghost>warning</c-button>
+        <c-button type="danger" ghost>danger</c-button>
+        <c-button type="info" ghost>info</c-button>
+      </div>
+    </blockarea>
+
     <blockarea title="圆角按钮">
       <c-button type="primary" round>primary</c-button>
       <c-button type="success" round>success</c-button>

@@ -3,6 +3,7 @@
     class="c-button"
     :class="[`c-button--${type}`, {
     'is-plain': plain,
+    'is-ghost': ghost,
     'is-round': round,
     'is-circle': circle,
     'is-disabled': disabled
@@ -65,6 +66,11 @@ export default {
     },
     // 适配父元素宽度
     block: {
+      type: Boolean,
+      default: false,
+    },
+    // 幽灵按钮
+    ghost: {
       type: Boolean,
       default: false,
     },
@@ -252,6 +258,85 @@ export default {
   &:focus {
     background: #f56c6c;
     border-color: #f56c6c;
+    color: #fff;
+  }
+}
+
+/* 幽灵按钮样式 */
+.c-button.is-ghost {
+  border-color: #409eff;
+  background: transparent;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    color: #409eff;
+  }
+}
+
+.c-button--primary.is-ghost {
+  color: #409eff;
+  background: transparent;
+  border-color: #409eff;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    border-color: #b3d8ff;
+    color: #fff;
+  }
+}
+
+.c-button--success.is-ghost {
+  color: #67c23a;
+  background: transparent;
+  border-color: #67c23a;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    border-color: #c2e7b0;
+    color: #fff;
+  }
+}
+
+.c-button--info.is-ghost {
+  color: #909399;
+  background: transparent;
+  border-color: #909399;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    border-color: #d3d4d6;
+    color: #fff;
+  }
+}
+
+.c-button--warning.is-ghost {
+  color: #e6a23c;
+  background: transparent;
+
+  border-color: #e6a23c;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    border-color: #f5dab1;
+
+    color: #fff;
+  }
+}
+
+.c-button--danger.is-ghost {
+  color: #f56c6c;
+  background: transparent;
+  border-color: #f56c6c;
+
+  &:hover,
+  &:focus {
+    border-color: #fbc4c4;
+    background: transparent;
     color: #fff;
   }
 }
