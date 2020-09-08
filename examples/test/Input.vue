@@ -45,6 +45,12 @@
         </template>
       </c-input>
     </blockarea>
+
+    <blockarea title="固定组合">
+      <c-input addonBefore="https://"></c-input>
+      <c-input addonAfter=".com"></c-input>
+      <c-input addonBefore="https://" addonAfter=".com"></c-input>
+    </blockarea>
   </div>
 </template>
 
