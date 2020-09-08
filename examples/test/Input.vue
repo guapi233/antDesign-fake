@@ -33,6 +33,18 @@
     <blockarea title="密码显隐按钮">
       <c-input placeholder="请输入密码" showPassword v-model="password"></c-input>
     </blockarea>
+
+    <blockarea title="前后缀插值">
+      <c-input prefix="￥" suffix="RMB"></c-input>
+      <c-input>
+        <template v-slot:prefix>
+          <i class="icon-camera"></i>
+        </template>
+        <template v-slot:suffix>
+          <i class="icon-calendar"></i>
+        </template>
+      </c-input>
+    </blockarea>
   </div>
 </template>
 

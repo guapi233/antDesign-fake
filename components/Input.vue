@@ -1,5 +1,11 @@
 <template>
-  <div class="c-input" :class="{ 'c-input--suffix': showSuffix }">
+  <div class="c-input" :class="{ 'c-input--suffix': showSuffix, 'c-input--prefix': showPrefix }">
+    <!-- 输入框前缀 -->
+    <span class="c-input__prefix" v-if="showPrefix">
+      <span v-if="prefix">{{ prefix }}</span>
+      <slot name="prefix" v-if="$slots.prefix"></slot>
+    </span>
+
     <!-- 输入框本体 -->
     <input
       class="c-input__inner"
@@ -25,6 +31,9 @@
         v-if="showPassword"
         @click="eyeOpen=!eyeOpen"
       ></i>
+
+      <span v-if="suffix">{{ suffix }}</span>
+      <slot v-if="$slots.suffix" name="suffix"></slot>
     </span>
   </div>
 </template>
@@ -73,12 +82,28 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 前缀嵌入文本
+    prefix: {
+      type: String,
+      default: "",
+    },
+    // 后缀嵌入文本
+    suffix: {
+      type: String,
+      default: "",
+    },
   },
   methods: {},
   computed: {
     // 打开CSS后缀的条件
     showSuffix() {
-      return this.clearable || this.showPassword;
+      return (
+        this.clearable || this.showPassword || this.suffix || this.$slots.suffix
+      );
+    },
+    // 打开CSS前缀的条件
+    showPrefix() {
+      return this.prefix || this.$slots.prefix;
     },
     // 密码Icon显隐的条件
     eyeIsOpen() {
@@ -144,6 +169,31 @@ export default {
     position: absolute;
     height: 100%;
     right: 10px;
+    top: 0;
+    line-height: 40px;
+    text-align: center;
+    color: #c0c4cc;
+    transition: all 0.3s;
+    z-index: 900;
+
+    i {
+      color: #c0c4cc;
+      font-size: 14px;
+      cursor: pointer;
+      transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+}
+
+.c-input--prefix {
+  .c-input__inner {
+    padding-left: 30px;
+  }
+
+  .c-input__prefix {
+    position: absolute;
+    height: 100%;
+    left: 10px;
     top: 0;
     line-height: 40px;
     text-align: center;
