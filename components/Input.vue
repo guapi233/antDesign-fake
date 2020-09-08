@@ -22,7 +22,7 @@
       <i
         class="c-input__icon c-input__clear"
         :class="eyeIsOpen"
-        v-if="showPassword && value"
+        v-if="showPassword"
         @click="eyeOpen=!eyeOpen"
       ></i>
     </span>
