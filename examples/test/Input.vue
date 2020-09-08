@@ -55,6 +55,15 @@
     <blockarea title="默认值">
       <c-input addonBefore="https://" addonAfter=".com" defaultVal="baidu.com"></c-input>
     </blockarea>
+
+    <blockarea title="值改变事件">
+      <c-input addonBefore="https://" addonAfter=".com" defaultVal="baidu.com" @change="hicount++"></c-input>
+      修改次数：{{ hicount }}
+    </blockarea>
+
+    <blockarea title="回车事件">
+      <c-input addonBefore="https://" addonAfter=".com" defaultVal="baidu.com" @enter="sayhi"></c-input>
+    </blockarea>
   </div>
 </template>
 
@@ -64,7 +73,13 @@ export default {
     return {
       username: "",
       password: "",
+      hicount: 0,
     };
+  },
+  methods: {
+    sayhi() {
+      alert("hi");
+    },
   },
 };
 </script>

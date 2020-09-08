@@ -18,7 +18,8 @@
       :disabled="disabled"
       :style="showInputBorder"
       :value="handleValue"
-      @input="$emit('input', $event.target.value)"
+      @input="handleInput"
+      @keydown.enter="$emit('enter', $event.target.value)"
     />
 
     <!-- 功能图标 -->
@@ -114,7 +115,13 @@ export default {
       default: "",
     },
   },
-  methods: {},
+  methods: {
+    // 输入框内容变化事件处理
+    handleInput($event) {
+      this.$emit("input", $event.target.value);
+      this.$emit("change", $event.target.value);
+    },
+  },
   computed: {
     // 打开CSS后缀的条件
     showSuffix() {
