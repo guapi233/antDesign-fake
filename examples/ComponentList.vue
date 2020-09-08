@@ -4,6 +4,7 @@
       v-for="component in componentList"
       :key="component"
       :to="{ name: component }"
+      class="component-link"
     >{{ component }}</router-link>
   </div>
 </template>
@@ -12,11 +13,15 @@
 export default {
   data() {
     return {
-      componentList: ["Button"],
+      componentList: ["Button", "Input"],
     };
   },
 };
 </script>
 
-<style>
+<style lang="scss">
+.component-link {
+  margin-right: 10px;
+}
+
 </style>
