@@ -102,6 +102,7 @@ export default {
   position: relative;
   font-size: 14px;
   display: inline-block;
+  margin: 0 8px 8px 0;
 
   .c-input__inner {
     -webkit-appearance: none;
