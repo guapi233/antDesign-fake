@@ -51,6 +51,10 @@
       <c-input addonAfter=".com"></c-input>
       <c-input addonBefore="https://" addonAfter=".com"></c-input>
     </blockarea>
+
+    <blockarea title="默认值">
+      <c-input addonBefore="https://" addonAfter=".com" defaultVal="baidu.com"></c-input>
+    </blockarea>
   </div>
 </template>
 

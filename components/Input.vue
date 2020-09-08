@@ -17,7 +17,7 @@
       :placeholder="placeholder"
       :disabled="disabled"
       :style="showInputBorder"
-      :value="value"
+      :value="handleValue"
       @input="$emit('input', $event.target.value)"
     />
 
@@ -105,7 +105,12 @@ export default {
     },
     // 后固定组合
     addonAfter: {
-      tupe: String,
+      type: String,
+      default: "",
+    },
+    // 默认值
+    defaultVal: {
+      type: String,
       default: "",
     },
   },
@@ -132,6 +137,10 @@ export default {
           ? "text"
           : "password"
         : this.type;
+    },
+    // 值处理
+    handleValue() {
+      return this.value ? this.value : this.defaultVal;
     },
     // 含有固定搭配的话，输入框隐藏部分边框
     showInputBorder() {
