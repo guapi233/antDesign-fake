@@ -64,6 +64,10 @@
     <blockarea title="回车事件">
       <c-input addonBefore="https://" addonAfter=".com" defaultVal="baidu.com" @enter="sayhi"></c-input>
     </blockarea>
+
+    <blockarea title="最大长度">
+      <c-input :maxLength="10" placeholder="最大长度10"></c-input>
+    </blockarea>
   </div>
 </template>
 

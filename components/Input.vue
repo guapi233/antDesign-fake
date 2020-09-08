@@ -11,6 +11,7 @@
     <!-- 输入框本体 -->
     <input
       class="c-input__inner"
+      :maxlength="maxLength"
       :type="handleType"
       :class="{ 'is-disabled': disabled }"
       :name="name"
@@ -113,6 +114,10 @@ export default {
     defaultVal: {
       type: String,
       default: "",
+    },
+    // 最大值
+    maxLength: {
+      type: [String, Number],
     },
   },
   methods: {
