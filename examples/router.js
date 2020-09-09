@@ -6,6 +6,7 @@ import Input from "./test/Input.vue";
 import Radio from "./test/Radio.vue";
 import Checkbox from "./test/Checkbox.vue";
 import Switch from "./test/Switch.vue";
+import Form from "./test/Form.vue";
 
 Vue.use(Router);
 
@@ -38,6 +39,11 @@ const routes = [
     path: "/Switch",
     component: Switch,
     name: "SwitchTest",
+  },
+  {
+    path: "/Form",
+    component: Form,
+    name: "Form",
   },
 ];
 

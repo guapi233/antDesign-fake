@@ -9,7 +9,7 @@
 
 - [ ] Form基本结构
 
-- [ ] Form-item基本结构
+- [x] Form-item基本结构
 
 - [ ] Form不同布局
 
