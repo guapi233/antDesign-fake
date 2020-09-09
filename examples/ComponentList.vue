@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      componentList: ["Button", "Input"],
+      componentList: ["Button", "Input", "Radio"],
     };
   },
 };
@@ -23,5 +23,4 @@ export default {
 .component-link {
   margin-right: 10px;
 }
-
 </style>
