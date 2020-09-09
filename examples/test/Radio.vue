@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  name: "Radio",
   data() {
     return {
       test1: "女",

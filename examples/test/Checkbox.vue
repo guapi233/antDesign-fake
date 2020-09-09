@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  name: "Checkbox",
   data() {
     return {
       test1: "",
