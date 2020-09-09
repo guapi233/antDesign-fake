@@ -7,6 +7,7 @@ import RadioGroup from "./Radio-group";
 import Switch from "./Switch";
 import CheckboxGroup from "./Checkbox-group";
 import FormItem from "./Form-item";
+import Form from "./Form";
 import "./fonts/iconfont.css";
 
 // 组件列表
@@ -20,6 +21,7 @@ const components = [
   Switch,
   CheckboxGroup,
   FormItem,
+  Form,
 ];
 
 // 安装函数

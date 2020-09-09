@@ -125,6 +125,11 @@ export default {
     handleInput($event) {
       this.$emit("input", $event.target.value);
       this.$emit("change", $event.target.value);
+
+      // 处理值校验
+      if (this.$parent.isFormItem) {
+        this.$parent.validate();
+      }
     },
   },
   computed: {
