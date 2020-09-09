@@ -5,6 +5,7 @@ import Button from "./test/Button.vue";
 import Input from "./test/Input.vue";
 import Radio from "./test/Radio.vue";
 import Checkbox from "./test/Checkbox.vue";
+import Switch from "./test/Switch.vue";
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ const routes = [
     path: "/Checkbox",
     component: Checkbox,
     name: "Checkbox",
+  },
+  {
+    path: "/Switch",
+    component: Switch,
+    name: "SwitchTest",
   },
 ];
 
