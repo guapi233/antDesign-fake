@@ -4,6 +4,7 @@ import ComponentList from "./ComponentList.vue";
 import Button from "./test/Button.vue";
 import Input from "./test/Input.vue";
 import Radio from "./test/Radio.vue";
+import Checkbox from "./test/Checkbox.vue";
 
 Vue.use(Router);
 
@@ -26,6 +27,11 @@ const routes = [
     path: "/Radio",
     component: Radio,
     name: "Radio",
+  },
+  {
+    path: "/Checkbox",
+    component: Checkbox,
+    name: "Checkbox",
   },
 ];
 

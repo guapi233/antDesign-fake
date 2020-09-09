@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      componentList: ["Button", "Input", "Radio"],
+      componentList: ["Button", "Input", "Radio", "Checkbox"],
     };
   },
 };
