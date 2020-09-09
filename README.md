@@ -7,13 +7,11 @@
 
 **Form组件、Form-item组件**
 
-- [ ] Form基本结构
+- [x] Form基本结构
 
 - [x] Form-item基本结构
 
-- [ ] Form不同布局
-
-- [ ] Form表单校验
+- [x] Form表单校验
 
   
 
