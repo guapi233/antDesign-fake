@@ -17,7 +17,14 @@
     </blockarea>
 
     <blockarea title="HTML插值">
-      <c-button type="tip" @click="notice5">提示</c-button>
+      <c-button @click="notice5">提示</c-button>
+    </blockarea>
+
+    <blockarea title="自定义弹出位置">
+      <c-button @click="notice6('top-right')">右上角</c-button>
+      <c-button @click="notice6('bottom-right')">右下角</c-button>
+      <c-button @click="notice6('bottom-left')">左下角</c-button>
+      <c-button @click="notice6('top-left')">左上角</c-button>
     </blockarea>
   </div>
 </template>
@@ -62,6 +69,15 @@ export default {
         dangerouslyUseHTMLString: true,
         title: "提示",
         message: "<b><i>这是一段HTML插值</i></b>",
+      });
+    },
+    notice6(position) {
+      this.$notice({
+        type: "tip",
+        dangerouslyUseHTMLString: true,
+        title: "提示",
+        message: "<b><i>这是一段HTML插值</i></b>",
+        position,
       });
     },
   },

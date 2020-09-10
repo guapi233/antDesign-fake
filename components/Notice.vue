@@ -1,6 +1,6 @@
 <template>
   <transition name="notice" appear>
-    <div class="c-notice" v-if="isShow" :style="{ top: 16 + offsetY + 'px' }">
+    <div class="c-notice" v-if="isShow" :style="handleOffsetY" :class="[`at-${ position }`]">
       <i v-if="type" :class="`icon-${ type }`"></i>
 
       <div class="c-notice__wrapper">
@@ -25,7 +25,16 @@ export default {
       offsetY: 0, // Y轴偏移量
       type: "", // 弹窗类型
       dangerouslyUseHTMLString: false, // 使用HTML插值
+      position: "top-right", // 弹出位置
     };
+  },
+  computed: {
+    // Y轴偏移量计算
+    handleOffsetY() {
+      let direction = this.position.split("-")[0];
+
+      return { [direction]: 16 + this.offsetY + "px" };
+    },
   },
   methods: {
     // 关闭
@@ -35,7 +44,9 @@ export default {
     // 计算Y轴偏移量
     calculateOffsetY() {
       // 已经存在的Notice组件
-      let exsistNotices = document.querySelectorAll(".c-notice");
+      let exsistNotices = document.querySelectorAll(
+        `.c-notice.at-${this.position}`
+      );
 
       Array.from(exsistNotices).forEach((item) => {
         this.offsetY += item.clientHeight + 16;
@@ -103,12 +114,41 @@ export default {
 }
 
 // 动画
-.notice-enter {
+.at-top-right.notice-enter,
+.at-bottom-right.notice-enter {
   right: -330px;
 }
 
-.notice-enter-to {
+.at-top-right.notice-enter-to,
+.at-bottom-right.notice-enter-to {
   right: 16px;
+}
+
+.at-top-left.notice-enter,
+.at-bottom-left.notice-enter {
+  left: -330px;
+}
+
+.at-top-left.notice-enter-to,
+.at-bottom-left.notice-enter-to {
+  left: 16px;
+}
+
+.at-top-left {
+  left: 16px;
+  right: 0;
+}
+
+.at-bottom-left {
+  left: 16px;
+  right: atuo;
+  top: auto;
+  bottom: 16px;
+}
+
+.at-bottom-right {
+  top: auto;
+  bottom: 16px;
 }
 
 .notice-leave-to {
