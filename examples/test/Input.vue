@@ -68,6 +68,47 @@
     <blockarea title="最大长度">
       <c-input :maxLength="10" placeholder="最大长度10"></c-input>
     </blockarea>
+
+    <blockarea title="不同尺寸">
+      <b>大号</b>
+      <c-input placeholder="大号" size="large"></c-input>
+      <c-input addonBefore="https://" addonAfter=".com" placeholder="大号" size="large"></c-input>
+      <c-input prefix="￥" suffix="RMB" size="large" placeholder="大号"></c-input>
+      <c-input size="large" placeholder="大号">
+        <template v-slot:prefix>
+          <i class="icon-camera"></i>
+        </template>
+        <template v-slot:suffix>
+          <i class="icon-calendar"></i>
+        </template>
+      </c-input>
+
+      <b>默认</b>
+      <c-input placeholder="默认"></c-input>
+      <c-input addonBefore="https://" addonAfter=".com" placeholder="默认"></c-input>
+      <c-input prefix="￥" suffix="RMB" placeholder="默认"></c-input>
+      <c-input placeholder="默认">
+        <template v-slot:prefix>
+          <i class="icon-camera"></i>
+        </template>
+        <template v-slot:suffix>
+          <i class="icon-calendar"></i>
+        </template>
+      </c-input>
+
+      <b>小号</b>
+      <c-input placeholder="小号" size="small"></c-input>
+      <c-input addonBefore="https://" addonAfter=".com" placeholder="小号" size="small"></c-input>
+      <c-input prefix="￥" suffix="RMB" placeholder="小号" size="small"></c-input>
+      <c-input placeholder="小号" size="small">
+        <template v-slot:prefix>
+          <i class="icon-camera"></i>
+        </template>
+        <template v-slot:suffix>
+          <i class="icon-calendar"></i>
+        </template>
+      </c-input>
+    </blockarea>
   </div>
 </template>
 

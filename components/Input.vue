@@ -1,5 +1,8 @@
 <template>
-  <div class="c-input" :class="{ 'c-input--suffix': showSuffix, 'c-input--prefix': showPrefix }">
+  <div
+    class="c-input"
+    :class="[`c-input--size__${size}`, { 'c-input--suffix': showSuffix, 'c-input--prefix': showPrefix }]"
+  >
     <!-- 固定前缀 -->
     <span class="c-input__addon__before" v-if="addonBefore">{{ addonBefore }}</span>
 
@@ -119,6 +122,11 @@ export default {
     maxLength: {
       type: [String, Number],
     },
+    // 尺寸
+    size: {
+      type: String,
+      default: "default",
+    },
   },
   methods: {
     // 输入框内容变化事件处理
@@ -175,7 +183,7 @@ export default {
 .c-input {
   width: 100%;
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   margin: 0 8px 8px 0;
 
@@ -187,8 +195,8 @@ export default {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 0;
-    line-height: 40px;
-    height: 40px;
+    line-height: 32px;
+    height: 32px;
     box-sizing: border-box;
   }
 
@@ -200,8 +208,8 @@ export default {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: 0;
-    line-height: 40px;
-    height: 40px;
+    line-height: 32px;
+    height: 32px;
     box-sizing: border-box;
   }
 
@@ -214,8 +222,8 @@ export default {
     box-sizing: border-box;
     color: #606266;
     font-size: inherit;
-    height: 40px;
-    line-height: 40px;
+    height: 32px;
+    line-height: 32px;
     outline: none;
     padding: 0 15px;
     transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -245,7 +253,7 @@ export default {
     height: 100%;
     right: 10px;
     top: 0;
-    line-height: 40px;
+    line-height: 32px;
     text-align: center;
     color: #c0c4cc;
     transition: all 0.3s;
@@ -270,7 +278,7 @@ export default {
     height: 100%;
     left: 10px;
     top: 0;
-    line-height: 40px;
+    line-height: 32px;
     text-align: center;
     color: #c0c4cc;
     transition: all 0.3s;
@@ -289,5 +297,54 @@ export default {
 ::-ms-clear,
 ::-ms-reveal {
   display: none;
+}
+
+// 尺寸样式
+/* 大号 */
+.c-input--size__large {
+  font-size: 16px;
+
+  .c-input__addon__before,
+  .c-input__addon__after,
+  .c-input__inner {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+.c-input--size__large.c-input--prefix {
+  .c-input__prefix {
+    line-height: 40px;
+  }
+}
+
+.c-input--size__large.c-input--suffix {
+  .c-input__suffix {
+    line-height: 40px;
+  }
+}
+
+/* 小号 */
+.c-input--size__small {
+  font-size: 12px;
+
+  .c-input__addon__before,
+  .c-input__addon__after,
+  .c-input__inner {
+    height: 24px;
+    line-height: 24px;
+  }
+}
+
+.c-input--size__small.c-input--prefix {
+  .c-input__prefix {
+    line-height: 24px;
+  }
+}
+
+.c-input--size__small.c-input--suffix {
+  .c-input__suffix {
+    line-height: 24px;
+  }
 }
 </style>
