@@ -81,6 +81,15 @@
     <div class="next decorator" :class="[activePage>=pagesCount ?'unclicked' :'']" @click="toNext">
       <i class="icon-arrow"></i>
     </div>
+
+    <!-- 跳转输入框 -->
+    <div class="inputer" v-if="inputure">
+      <span>跳至</span>
+      <div class="inputer__inner">
+        <c-input nomargin v-model="inputVal" @enter="handleInputure"></c-input>
+      </div>
+      <span>页</span>
+    </div>
   </div>
 </template>
 
@@ -98,12 +107,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 输入跳转功能
+    inputure: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       changePreviewOn: false, // 向前移动三页按钮是否被悬浮
       changeNextOn: false, // 向后移动三页按钮是否被悬浮
       activePage: 1, // 当前选中的页面
+      inputVal: "", // 跳转输入框值
     };
   },
   computed: {
@@ -167,6 +182,22 @@ export default {
       } else {
         this.activePage = this.pagesCount;
       }
+    },
+    // 处理输入框回车翻页
+    handleInputure() {
+      if (
+        this.inputVal === "" ||
+        isNaN(Number(this.inputVal)) ||
+        Array.prototype.includes.call(this.inputVal, ".") ||
+        Number(this.inputVal) < 1 ||
+        Number(this.inputVal > this.count)
+      ) {
+        // noop
+      } else {
+        this.activePage = Number(this.inputVal);
+      }
+
+      this.inputVal = "";
     },
   },
   watch: {
@@ -280,6 +311,18 @@ $assistColor: #999999;
     &:hover {
       border: 1px solid #d9d9d9;
     }
+  }
+}
+
+// 输入切换样式
+.inputer {
+  margin-left: 10px;
+  height: 100%;
+
+  .inputer__inner {
+    display: inline-block;
+    width: 55px;
+    margin: 0 5px;
   }
 }
 </style>

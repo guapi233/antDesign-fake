@@ -12,6 +12,10 @@
       <c-pagination :count="100" hasBorder @turn="times++"></c-pagination>
       翻了 {{ times }} 次
     </blockarea>
+
+    <blockarea title="输入跳转">
+      <c-pagination :count="100" hasBorder inputure></c-pagination>
+    </blockarea>
   </div>
 </template>
 
