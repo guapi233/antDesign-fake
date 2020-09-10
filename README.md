@@ -5,13 +5,13 @@
 
 ## 正在进行
 
-**Form组件、Form-item组件**
+**Pagination 分页组件**
 
-- [x] Form基本结构
+- [ ] 基本结构
 
-- [x] Form-item基本结构
+- [ ] 翻页功能
 
-- [x] Form表单校验
+  
 
   
 
@@ -21,3 +21,7 @@
 
 * Button 按钮
 * Input 输入框
+* Form 表单
+* Radio 单选框
+* Checkbox 多选框
+* Switch 开关
