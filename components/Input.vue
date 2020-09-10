@@ -2,6 +2,7 @@
   <div
     class="c-input"
     :class="[`c-input--size__${size}`, { 'c-input--suffix': showSuffix, 'c-input--prefix': showPrefix }]"
+    :style="nomargin ?{ margin: 0 } :{}"
   >
     <!-- 固定前缀 -->
     <span class="c-input__addon__before" v-if="addonBefore">{{ addonBefore }}</span>
@@ -126,6 +127,11 @@ export default {
     size: {
       type: String,
       default: "default",
+    },
+    // 关闭默认外边距
+    nomargin: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
