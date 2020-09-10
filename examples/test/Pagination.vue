@@ -8,8 +8,9 @@
       <c-pagination :count="100" hasBorder></c-pagination>
     </blockarea>
 
-    <blockarea title="小数附带0">
-      <c-pagination :count="100" hasBorder hasZero></c-pagination>
+    <blockarea title="翻页回调事件">
+      <c-pagination :count="100" hasBorder @turn="times++"></c-pagination>
+      翻了 {{ times }} 次
     </blockarea>
   </div>
 </template>
@@ -17,6 +18,11 @@
 <script>
 export default {
   name: "Pagination",
+  data() {
+    return {
+      times: 0,
+    };
+  },
 };
 </script>
 
