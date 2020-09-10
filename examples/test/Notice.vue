@@ -15,6 +15,10 @@
       <c-button type="warning" @click="notice4('warning')">警告</c-button>
       <c-button type="danger" @click="notice4('error')">错误</c-button>
     </blockarea>
+
+    <blockarea title="HTML插值">
+      <c-button type="tip" @click="notice5">提示</c-button>
+    </blockarea>
   </div>
 </template>
 
@@ -50,6 +54,14 @@ export default {
     notice4(type) {
       this.$notice({
         type: type,
+      });
+    },
+    notice5() {
+      this.$notice({
+        type: "tip",
+        dangerouslyUseHTMLString: true,
+        title: "提示",
+        message: "<b><i>这是一段HTML插值</i></b>",
       });
     },
   },

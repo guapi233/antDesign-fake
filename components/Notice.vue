@@ -5,7 +5,8 @@
 
       <div class="c-notice__wrapper">
         <h2 class="c-notice__title">{{ title }}</h2>
-        <div class="c-notice__content">{{ message }}</div>
+        <div class="c-notice__content" v-if="dangerouslyUseHTMLString" v-html="message"></div>
+        <div class="c-notice__content" v-else>{{ message }}</div>
         <i class="c-notice__closeBtn icon-close" @click="destroy"></i>
       </div>
     </div>
@@ -17,12 +18,13 @@ export default {
   name: "CNotice",
   data() {
     return {
-      title: "提示",
-      message: "提示信息",
-      duration: 5000,
-      isShow: true,
-      offsetY: 0,
-      type: "",
+      title: "提示", // 标题
+      message: "提示信息", // 内容
+      duration: 5000, // 展示时间
+      isShow: true, // 是否展示
+      offsetY: 0, // Y轴偏移量
+      type: "", // 弹窗类型
+      dangerouslyUseHTMLString: false, // 使用HTML插值
     };
   },
   methods: {
