@@ -13,7 +13,15 @@
 export default {
   data() {
     return {
-      componentList: ["Button", "Input", "Radio", "Checkbox", "Switch", "Form"],
+      componentList: [
+        "Button",
+        "Input",
+        "Radio",
+        "Checkbox",
+        "Switch",
+        "Form",
+        "Pagination",
+      ],
     };
   },
 };

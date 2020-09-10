@@ -8,6 +8,7 @@ import Switch from "./Switch";
 import CheckboxGroup from "./Checkbox-group";
 import FormItem from "./Form-item";
 import Form from "./Form";
+import Pagination from "./Pagination";
 import "./fonts/iconfont.css";
 
 // 组件列表
@@ -22,6 +23,7 @@ const components = [
   CheckboxGroup,
   FormItem,
   Form,
+  Pagination,
 ];
 
 // 安装函数
