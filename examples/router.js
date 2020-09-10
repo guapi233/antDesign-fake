@@ -8,6 +8,7 @@ import Checkbox from "./test/Checkbox.vue";
 import Switch from "./test/Switch.vue";
 import Form from "./test/Form.vue";
 import Pagination from "./test/Pagination.vue";
+import Notice from "./test/Notice.vue";
 
 Vue.use(Router);
 
@@ -50,6 +51,11 @@ const routes = [
     path: "/Pagination",
     component: Pagination,
     name: "Pagination",
+  },
+  {
+    path: "/Notice",
+    component: Notice,
+    name: "Notice",
   },
 ];
 
