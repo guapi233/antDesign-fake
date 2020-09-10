@@ -17,6 +17,7 @@ export default {
     return {
       title: "提示",
       message: "提示信息",
+      duration: 5000,
       isShow: true,
     };
   },
@@ -24,6 +25,13 @@ export default {
     destroy() {
       this.isShow = false;
     },
+  },
+  created() {
+    if (this.duration) {
+      setTimeout(() => {
+        this.isShow = false;
+      }, this.duration);
+    }
   },
 };
 </script>
