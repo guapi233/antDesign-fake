@@ -5,7 +5,11 @@
     </blockarea>
 
     <blockarea title="边框样式">
-      <c-pagination :count="30" hasBorder></c-pagination>
+      <c-pagination :count="100" hasBorder></c-pagination>
+    </blockarea>
+
+    <blockarea title="小数附带0">
+      <c-pagination :count="100" hasBorder hasZero></c-pagination>
     </blockarea>
   </div>
 </template>

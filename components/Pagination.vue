@@ -90,7 +90,7 @@ export default {
   props: {
     // 总得数据量
     count: {
-      type: Number,
+      type: [Number, String],
       default: 1,
     },
     // 页码是否附带边框
