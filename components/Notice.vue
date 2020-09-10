@@ -1,6 +1,6 @@
 <template>
   <transition name="notice" appear>
-    <div class="c-notice" v-if="isShow">
+    <div class="c-notice" v-if="isShow" :style="{ top: 16 + offsetY + 'px' }">
       <div class="c-notice__wrapper">
         <h2 class="c-notice__title">{{ title }}</h2>
         <div class="c-notice__content">{{ message }}</div>
@@ -19,19 +19,34 @@ export default {
       message: "提示信息",
       duration: 5000,
       isShow: true,
+      offsetY: 0,
     };
   },
   methods: {
+    // 关闭
     destroy() {
       this.isShow = false;
     },
+    // 计算Y轴偏移量
+    calculateOffsetY() {
+      // 已经存在的Notice组件
+      let exsistNotices = document.querySelectorAll(".c-notice");
+
+      Array.from(exsistNotices).forEach((item) => {
+        this.offsetY += item.clientHeight + 16;
+      });
+    },
   },
   created() {
+    // 定时关闭
     if (this.duration) {
       setTimeout(() => {
         this.isShow = false;
       }, this.duration);
     }
+
+    // 计算Y轴偏移量
+    this.calculateOffsetY();
   },
 };
 </script>
@@ -49,8 +64,6 @@ export default {
   transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s, top 0.4s,
     bottom 0.3s;
   overflow: hidden;
-  /* 动态 */
-  top: 16px;
   z-index: 2002;
   right: 16px;
 
