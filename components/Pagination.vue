@@ -88,7 +88,7 @@
 export default {
   name: "CPagination",
   props: {
-    // 总得数据量
+    // 总数据量
     count: {
       type: [Number, String],
       default: 1,
@@ -136,10 +136,11 @@ export default {
     },
     // 上三页
     changePreview() {
-      // 判断在翻页时，如果当前的页标为4、5、6之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行
+      // 判断在翻页时，如果当前的页标为4、5、6之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行手动切换Icon展示
       if ([4, 5, 6].includes(this.activePage)) {
         this.changePreviewOn = false;
       }
+
       // 翻页逻辑
       if (this.activePage > 3) {
         this.activePage -= 3;
@@ -149,7 +150,7 @@ export default {
     },
     // 下三页
     changeNext() {
-      // 判断在翻页时，如果当前的页标为[总页数-6, 总页数-5, 总页数-4]之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行
+      // 判断在翻页时，如果当前的页标为[总页数-6, 总页数-5, 总页数-4]之一，由于v-if会销毁元素致使无法完成mouseleave事件中的逻辑，所以需要在此执行手动切换Icon展示
       if (
         [
           this.pagesCount - 6,
@@ -159,6 +160,8 @@ export default {
       ) {
         this.changeNextOn = false;
       }
+
+      // 翻页逻辑
       if (this.activePage < this.pagesCount - 3) {
         this.activePage += 3;
       } else {
@@ -167,6 +170,7 @@ export default {
     },
   },
   watch: {
+    // 监控翻页动作
     activePage(newer, older) {
       this.$emit("turn", newer);
     },
@@ -174,6 +178,7 @@ export default {
   filters: {
     // 小于10的页标，前面加个 0
     smallerTen(val) {
+      // 由于filter中无法访问Vue实例，故取消根据prop选择 “是否补0” 的特性
       if (val < 10) return `0${val}`;
       return val;
     },
