@@ -8,6 +8,13 @@
       <c-button @click="notice2">不会自动关闭</c-button>
       <c-button @click="notice3">2s后关闭</c-button>
     </blockarea>
+
+    <blockarea title="不同种类的弹窗">
+      <c-button type="success" @click="notice4('success')">成功</c-button>
+      <c-button type="info" @click="notice4('tip')">提示</c-button>
+      <c-button type="warning" @click="notice4('warning')">警告</c-button>
+      <c-button type="danger" @click="notice4('error')">错误</c-button>
+    </blockarea>
   </div>
 </template>
 
@@ -38,6 +45,11 @@ export default {
         title: "这是标题",
         message: "2s后自动关闭",
         duration: 2000,
+      });
+    },
+    notice4(type) {
+      this.$notice({
+        type: type,
       });
     },
   },

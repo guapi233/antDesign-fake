@@ -1,6 +1,8 @@
 <template>
   <transition name="notice" appear>
     <div class="c-notice" v-if="isShow" :style="{ top: 16 + offsetY + 'px' }">
+      <i v-if="type" :class="`icon-${ type }`"></i>
+
       <div class="c-notice__wrapper">
         <h2 class="c-notice__title">{{ title }}</h2>
         <div class="c-notice__content">{{ message }}</div>
@@ -20,6 +22,7 @@ export default {
       duration: 5000,
       isShow: true,
       offsetY: 0,
+      type: "",
     };
   },
   methods: {
@@ -108,5 +111,22 @@ export default {
 
 .notice-leave-to {
   opacity: 0;
+}
+
+// 状态色
+.icon-success {
+  color: rgb(82, 196, 26);
+}
+
+.icon-error {
+  color: rgb(253, 107, 109);
+}
+
+.icon-tip {
+  color: rgb(5, 207, 164);
+}
+
+.icon-warning {
+  color: rgb(250, 173, 20);
 }
 </style>
