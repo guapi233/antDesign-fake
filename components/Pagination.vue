@@ -183,17 +183,17 @@ export default {
 
 <style lang="scss" scoped>
 $basisFont: 14px;
-$adornColor: skyblue;
+$adornColor: #1890ff;
 $assistColor: #999999;
 .pagination-container {
   display: flex;
   font-size: $basisFont;
-  font-weight: bold;
   user-select: none;
+  color: rgba(0, 0, 0, 0.726);
 
   .preview {
     transform: rotate(180deg);
-    margin-right: 15px;
+    margin-right: 10px;
     line-height: 28px;
     i {
       font-size: $basisFont;
@@ -201,7 +201,7 @@ $assistColor: #999999;
   }
 
   .next {
-    margin-left: 15px;
+    margin-left: 10px;
     line-height: 28px;
     i {
       font-size: $basisFont;
@@ -221,8 +221,9 @@ $assistColor: #999999;
 
   .page-number {
     height: 28px;
-    margin: 0 15px;
+    margin: 0 10px;
     line-height: 28px;
+    transition: all 0.2s ease-in;
   }
 
   .change-numbers {
@@ -252,10 +253,28 @@ $assistColor: #999999;
 
 // 边框样式
 .has-border {
-  .page-number {
-    border: 1px solid #1890ff;
+  .page-number,
+  .preview,
+  .change-preview,
+  .next,
+  .change-next {
+    border: 1px solid #d9d9d9;
     border-radius: 4px;
-    padding: 0 5px;
+    padding: 0 6px;
+
+    &:hover {
+      border-color: #1890ff;
+    }
+  }
+
+  .active {
+    border-color: #1890ff;
+  }
+
+  .unclicked {
+    &:hover {
+      border: 1px solid #d9d9d9;
+    }
   }
 }
 </style>
