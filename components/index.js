@@ -9,7 +9,7 @@ import CheckboxGroup from "./Checkbox-group";
 import FormItem from "./Form-item";
 import Form from "./Form";
 import Pagination from "./Pagination";
-import Notice from "./Notice";
+import notice from "./notice.js";
 import "./fonts/iconfont.css";
 
 // 组件列表
@@ -25,13 +25,21 @@ const components = [
   FormItem,
   Form,
   Pagination,
-  Notice,
 ];
+
+// 全局方法列表
+const globalMethods = [notice];
 
 // 安装函数
 const install = function(Vue) {
+  // 注册全局组件
   components.forEach((item) => {
     Vue.component(item.name, item);
+  });
+
+  // 注册全局方法
+  globalMethods.forEach((item) => {
+    Vue.prototype[item.name] = item.method;
   });
 };
 
