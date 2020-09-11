@@ -20,6 +20,31 @@ export default {
               children: [
                 {
                   label: "三级 1-1-1",
+                  children: [
+                    {
+                      label: "四级 1-1-1",
+                      children: [
+                        {
+                          label: "五级 1-1-1",
+                        },
+                        {
+                          label: "五级 1-1-1",
+                        },
+                        {
+                          label: "五级 1-1-1",
+                        },
+                        {
+                          label: "五级 1-1-1",
+                        },
+                        {
+                          label: "五级 1-1-1",
+                        },
+                        {
+                          label: "五级 1-1-1",
+                        },
+                      ],
+                    },
+                  ],
                 },
               ],
             },

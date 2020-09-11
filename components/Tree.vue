@@ -10,9 +10,13 @@
       </div>
 
       <!-- 子级信息 -->
-      <div class="c-tree__children" v-show="item.open">
-        <c-tree v-if="item.children" :data="item.children" :tablevel="tablevel+1"></c-tree>
-      </div>
+      <!-- <div class="c-tree-childrenWrapper" :style="childrenWrapperHeight" ref="childrenWrapper"> -->
+      <transition name="slide" appear>
+        <div class="c-tree__children" v-if="item.open">
+          <c-tree v-if="item.children" :data="item.children" :tablevel="tablevel+1"></c-tree>
+        </div>
+      </transition>
+      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -34,14 +38,18 @@ export default {
   },
   data() {
     return {
-      open: false,
-      hasChildren: !!this.data.children,
+      open: false, // 子级展开状态
+      hasChildren: !!this.data.children, // 当前层级是否包含子级
     };
   },
   computed: {
     // 缩进处理
     handleTab() {
       return { marginLeft: 18 * this.tablevel + "px" };
+    },
+    // 获取子元素包裹的高度，方便做动画
+    childrenWrapperHeight() {
+      return { height: this.data.length * 26 + "px" };
     },
   },
   methods: {
@@ -69,6 +77,7 @@ export default {
 <style lang="scss">
 .c-tree {
   color: #606266;
+  transition: all 0.2s ease-in;
 
   .c-tree__node {
     display: flex;
@@ -78,6 +87,10 @@ export default {
 
     &:hover {
       background-color: #f5f7fa;
+    }
+
+    .c-tree__showIcon {
+      transition: all 0.2s ease-in;
     }
 
     .open {
@@ -96,5 +109,24 @@ export default {
       opacity: 0;
     }
   }
+
+  .c-tree__children {
+    overflow: hidden;
+  }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+}
+
+.slide-enter-to,
+.slide-leave {
+  max-height: 50px;
 }
 </style>
