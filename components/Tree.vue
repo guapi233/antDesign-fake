@@ -10,6 +10,7 @@
       </div>
 
       <!-- 子级信息 -->
+      <!-- 过渡动画存在BUG，transition无法从0过渡到auto -->
       <!-- <div class="c-tree-childrenWrapper" :style="childrenWrapperHeight" ref="childrenWrapper"> -->
       <transition name="slide" appear>
         <div class="c-tree__children" v-if="item.open">
