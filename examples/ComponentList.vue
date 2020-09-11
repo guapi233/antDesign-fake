@@ -22,6 +22,7 @@ export default {
         "Form",
         "Pagination",
         "Notice",
+        "Tree",
       ],
     };
   },

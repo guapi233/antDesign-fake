@@ -9,6 +9,7 @@ import Switch from "./test/Switch.vue";
 import Form from "./test/Form.vue";
 import Pagination from "./test/Pagination.vue";
 import Notice from "./test/Notice.vue";
+import Tree from "./test/Tree.vue";
 
 Vue.use(Router);
 
@@ -56,6 +57,11 @@ const routes = [
     path: "/Notice",
     component: Notice,
     name: "Notice",
+  },
+  {
+    path: "/Tree",
+    component: Tree,
+    name: "Tree",
   },
 ];
 

@@ -9,6 +9,8 @@ import CheckboxGroup from "./Checkbox-group";
 import FormItem from "./Form-item";
 import Form from "./Form";
 import Pagination from "./Pagination";
+import Tree from "./Tree.vue";
+
 import notice from "./notice.js";
 import "./fonts/iconfont.css";
 
@@ -25,6 +27,7 @@ const components = [
   FormItem,
   Form,
   Pagination,
+  Tree,
 ];
 
 // 全局方法列表
