@@ -35,24 +35,37 @@ export default {
   },
   computed: {
     open() {
+      if (typeof this.Collapse.value === "string") {
+        return this.Collapse.value === this.name;
+      }
+
       return this.Collapse.value.includes(this.name);
     },
   },
   methods: {
     // 处理开关状态变化
     handleStateChange() {
-      if (this.open) {
-        let curIndex = this.Collapse.value.indexOf(this.name);
-        // 将当前元素从开启元素数组中移除
-        if (curIndex !== -1) {
-          let newActives = [...this.Collapse.value];
-          newActives.splice(curIndex, 1);
-          this.Collapse.$emit("input", newActives);
+      if (typeof this.Collapse.value === "string") {
+        // 如果开启手风琴模式，value为字符类型
+        if (this.open) {
+          this.Collapse.$emit("input", "");
+        } else {
+          this.Collapse.$emit("input", this.name);
         }
       } else {
-        // 将当前元素加入开启元素数组中
-        let newActives = [...this.Collapse.value, this.name];
-        this.Collapse.$emit("input", newActives);
+        if (this.open) {
+          let curIndex = this.Collapse.value.indexOf(this.name);
+          // 将当前元素从开启元素数组中移除
+          if (curIndex !== -1) {
+            let newActives = [...this.Collapse.value];
+            newActives.splice(curIndex, 1);
+            this.Collapse.$emit("input", newActives);
+          }
+        } else {
+          // 将当前元素加入开启元素数组中
+          let newActives = [...this.Collapse.value, this.name];
+          this.Collapse.$emit("input", newActives);
+        }
       }
     },
     handleHeight() {

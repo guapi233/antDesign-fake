@@ -7,6 +7,14 @@
         <c-collapse-item title="红红" name="hoho">我是内容卡号是你来得及爱上了</c-collapse-item>
       </c-collapse>
     </blockarea>
+
+    <blockarea title="手风琴模式">
+      <c-collapse v-model="actives2">
+        <c-collapse-item title="哈哈" name="haha">我是内容卡号是你来得及爱上了</c-collapse-item>
+        <c-collapse-item title="嘻嘻" name="xixi">我是内容卡号是你来得及爱上了</c-collapse-item>
+        <c-collapse-item title="红红" name="hoho">我是内容卡号是你来得及爱上了</c-collapse-item>
+      </c-collapse>
+    </blockarea>
   </div>
 </template>
 
@@ -16,6 +24,7 @@ export default {
   data() {
     return {
       actives: ["hoho"],
+      actives2: "hoho",
     };
   },
 };
