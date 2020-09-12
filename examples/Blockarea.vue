@@ -1,5 +1,5 @@
 <template>
-  <div class="block-area">
+  <div class="block-area" :style="{ width }">
     <h2>{{ title }}</h2>
     <hr />
     <slot></slot>
@@ -13,6 +13,10 @@ export default {
     title: {
       type: String,
       default: "特性测试区",
+    },
+    width: {
+      type: String,
+      default: "auto",
     },
   },
 };
