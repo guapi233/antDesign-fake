@@ -10,6 +10,8 @@ import FormItem from "./Form-item";
 import Form from "./Form";
 import Pagination from "./Pagination";
 import Tree from "./Tree.vue";
+import Collapse from "./Collapse.vue";
+import CollapseItem from "./Collapse-item.vue";
 
 import notice from "./notice.js";
 import "./fonts/iconfont.css";
@@ -28,6 +30,8 @@ const components = [
   Form,
   Pagination,
   Tree,
+  Collapse,
+  CollapseItem,
 ];
 
 // 全局方法列表

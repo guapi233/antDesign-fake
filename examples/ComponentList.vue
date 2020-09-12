@@ -23,6 +23,7 @@ export default {
         "Pagination",
         "Notice",
         "Tree",
+        "Collapse",
       ],
     };
   },
