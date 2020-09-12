@@ -5,9 +5,17 @@
       <i class="c-collapse-item__icon icon-triangle" :class="[open ?'open' :'close']"></i>
     </div>
 
-    <div class="c-collapse-item__content" v-show="open">
-      <slot></slot>
-    </div>
+    <!-- 过渡动画存在Bug -->
+    <transition name="slide">
+      <div
+        class="c-collapse-item__content"
+        v-show="open"
+        :style="handleHeight"
+        ref="contentWrapper"
+      >
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -47,6 +55,9 @@ export default {
         this.Collapse.$emit("input", newActives);
       }
     },
+    handleHeight() {
+      // return { height: this.$refs["handleWrapper"].clientHeight + "px" };
+    },
   },
 };
 </script>
@@ -64,6 +75,7 @@ export default {
 
     .c-collapse-item__icon {
       margin: 0 8px 0 auto;
+      transition: all 0.3s;
     }
 
     .open {
@@ -82,6 +94,17 @@ export default {
   .c-collapse-item__content {
     padding-bottom: 25px;
     border-bottom: 1px solid #ebeef5;
+    transition: all 0.3s;
   }
+}
+
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+}
+
+.slide-enter-to,
+.slide-leave {
+  max-height: 50px;
 }
 </style>
