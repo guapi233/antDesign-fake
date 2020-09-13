@@ -1,5 +1,5 @@
 <template>
-  <div class="c-carousel" ref="carousel">
+  <div class="c-carousel" ref="carousel" @mouseenter="closeTimer" @mouseleave="openTimer">
     <span class="c-carousel__leftArrow" v-if="$slots.leftArrow" @click="toPrevious">
       <slot name="leftArrow"></slot>
     </span>
@@ -29,9 +29,15 @@
 export default {
   name: "CCarousel",
   props: {
+    // 控件的位置
     dotPosition: {
       type: String,
       default: "bottom",
+    },
+    // 是否自动播放
+    autoplay: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -43,6 +49,7 @@ export default {
       wrapperSize: {}, // 包裹层宽高
       curActive: 0, // 当前展示元素
       closeTransition: false, // 是否关闭过渡
+      slideTimer: null, // 滚动定时器
     };
   },
   computed: {
@@ -150,6 +157,37 @@ export default {
 
       this.$slots.default.push({ ...this.$slots.default[1] });
     },
+    // 尝试开启定时器
+    openTimer() {
+      if (this.autoplay) {
+        this.slideTimer = setInterval(this.toNext, 3000);
+      }
+    },
+    // 尝试关闭定时器
+    closeTimer() {
+      clearInterval(this.slideTimer);
+    },
+    // 初始化事件挂载
+    initEvent() {
+      this.$refs["wrapper"].addEventListener("transitionstart", () => {
+        if (this.closeTransition) {
+          this.$refs["wrapper"].style.transition = "none";
+        }
+      });
+
+      this.$refs["wrapper"].addEventListener("transitionend", () => {
+        if (this.curActive > this.$slots.default.length - 3) {
+          this.curActive = 0;
+          this.closeTransition = true;
+        } else if (this.curActive < 0) {
+          this.curActive = this.$slots.default.length - 3;
+          this.closeTransition = true;
+        }
+      });
+
+      // 尝试初始化定时器
+      this.openTimer();
+    },
   },
   watch: {
     dotPosition(newVal, oldVal) {
@@ -177,21 +215,7 @@ export default {
     this.initWrapperSize();
 
     // 挂载滑动事件
-    this.$refs["wrapper"].addEventListener("transitionstart", () => {
-      if (this.closeTransition) {
-        this.$refs["wrapper"].style.transition = "none";
-      }
-    });
-
-    this.$refs["wrapper"].addEventListener("transitionend", () => {
-      if (this.curActive > this.$slots.default.length - 3) {
-        this.curActive = 0;
-        this.closeTransition = true;
-      } else if (this.curActive < 0) {
-        this.curActive = this.$slots.default.length - 3;
-        this.closeTransition = true;
-      }
-    });
+    this.initEvent();
   },
 };
 </script>
