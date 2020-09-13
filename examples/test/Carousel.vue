@@ -39,6 +39,29 @@
         </div>
       </c-carousel>
     </blockarea>
+
+    <blockarea title="自定义控制箭头">
+      <c-carousel>
+        <template v-slot:leftArrow>
+          <i class="icon-calendar"></i>
+        </template>
+        <div class="item">
+          <h3>1</h3>
+        </div>
+        <div class="item">
+          <h3>2</h3>
+        </div>
+        <div class="item">
+          <h3>3</h3>
+        </div>
+        <div class="item">
+          <h3>4</h3>
+        </div>
+        <template v-slot:rightArrow>
+          <i class="icon-arrow"></i>
+        </template>
+      </c-carousel>
+    </blockarea>
   </div>
 </template>
 

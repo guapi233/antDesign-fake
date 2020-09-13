@@ -1,15 +1,23 @@
 <template>
   <div class="c-carousel" ref="carousel">
+    <span class="c-carousel__leftArrow" v-if="$slots.leftArrow" @click="toPrevious">
+      <slot name="leftArrow"></slot>
+    </span>
     <div class="c-carousel__wrapper" :style="{ ...wrapperSize, ...handleSlide }" ref="wrapper">
       <slot></slot>
     </div>
+
+    <span class="c-carousel__rightArrow" @click="toNext">
+      <slot name="rightArrow"></slot>
+    </span>
+
     <ul class="c-carousel__dotlist" :class="`c-carousel--dotPosition__${ dotPosition }`">
       <li
         class="dot-item"
         v-for="(item, index) in dotList"
         :key="index"
-        :class="{'is-active': curActive===index}"
-        @click="curActive=index"
+        :class="{'is-active': curActive + 1===item}"
+        @click="handleClick(index)"
       >
         <button class="dot-btn"></button>
       </li>
@@ -34,6 +42,7 @@ export default {
       itemCountHeight: 0, // 所有展示项总的高
       wrapperSize: {}, // 包裹层宽高
       curActive: 0, // 当前展示元素
+      closeTransition: false, // 是否关闭过渡
     };
   },
   computed: {
@@ -66,6 +75,33 @@ export default {
     },
   },
   methods: {
+    // 上一个
+    toPrevious() {
+      if (this.closeTransition) {
+        this.closeTransition = false;
+        this.$refs["wrapper"].style.transition = "transform 500ms ease 0s";
+      }
+
+      this.curActive--;
+    },
+    // 下一个
+    toNext() {
+      if (this.closeTransition) {
+        this.closeTransition = false;
+        this.$refs["wrapper"].style.transition = "transform 500ms ease 0s";
+      }
+
+      this.curActive++;
+    },
+    // 处理控件点击
+    handleClick(index) {
+      this.curActive = index;
+
+      if (this.closeTransition) {
+        this.closeTransition = false;
+        this.$refs["wrapper"].style.transition = "transform 500ms ease 0s";
+      }
+    },
     // 计算布局
     calculateLayout() {
       if (this.isRightSlide) {
@@ -83,9 +119,9 @@ export default {
       let itemCount = this.$slots.default.length;
 
       this.itemWidth = this.$refs["carousel"].clientWidth;
-      this.itemHeight = this.$refs[
-        "carousel"
-      ].children[0].children[0].clientHeight;
+      this.itemHeight = this.$refs["carousel"].querySelector(
+        ".c-carousel__wrapper"
+      ).children[0].clientHeight;
 
       this.itemCountWidth = this.$refs["carousel"].clientWidth * itemCount;
       this.itemCountHeight = this.$refs["carousel"].clientHeight * itemCount;
@@ -139,6 +175,23 @@ export default {
   mounted() {
     // 初始化包裹层宽高
     this.initWrapperSize();
+
+    // 挂载滑动事件
+    this.$refs["wrapper"].addEventListener("transitionstart", () => {
+      if (this.closeTransition) {
+        this.$refs["wrapper"].style.transition = "none";
+      }
+    });
+
+    this.$refs["wrapper"].addEventListener("transitionend", () => {
+      if (this.curActive > this.$slots.default.length - 3) {
+        this.curActive = 0;
+        this.closeTransition = true;
+      } else if (this.curActive < 0) {
+        this.curActive = this.$slots.default.length - 3;
+        this.closeTransition = true;
+      }
+    });
   },
 };
 </script>
@@ -236,6 +289,46 @@ export default {
       height: 24px;
       opacity: 1;
     }
+  }
+}
+
+// 左右箭头样式
+.c-carousel__leftArrow {
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+  opacity: 0.3;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+  cursor: pointer;
+
+  i {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.c-carousel__rightArrow {
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  opacity: 0.3;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  i {
+    font-size: 25px;
+    color: #fff;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 }
 </style>
