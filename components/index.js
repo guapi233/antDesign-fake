@@ -12,6 +12,7 @@ import Pagination from "./Pagination";
 import Tree from "./Tree.vue";
 import Collapse from "./Collapse.vue";
 import CollapseItem from "./Collapse-item.vue";
+import Carousel from "./Carousel.vue";
 
 import notice from "./notice.js";
 import "./fonts/iconfont.css";
@@ -32,6 +33,7 @@ const components = [
   Tree,
   Collapse,
   CollapseItem,
+  Carousel,
 ];
 
 // 全局方法列表

@@ -24,6 +24,7 @@ export default {
         "Notice",
         "Tree",
         "Collapse",
+        "Carousel",
       ],
     };
   },

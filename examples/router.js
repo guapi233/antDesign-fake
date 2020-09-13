@@ -11,6 +11,7 @@ import Pagination from "./test/Pagination.vue";
 import Notice from "./test/Notice.vue";
 import Tree from "./test/Tree.vue";
 import Collapse from "./test/Collapse.vue";
+import Carousel from "./test/Carousel.vue";
 
 Vue.use(Router);
 
@@ -68,6 +69,11 @@ const routes = [
     path: "/Collapse",
     component: Collapse,
     name: "Collapse",
+  },
+  {
+    path: "/Carousel",
+    component: Carousel,
+    name: "Carousel",
   },
 ];
 
