@@ -1,13 +1,13 @@
 <template>
   <div class="componet-list">
-    <p
+    <router-link
       v-for="component in componentList"
       :key="component"
       :to="{ name: component }"
       class="component-link"
     >
       {{ component }}
-    </p>
+    </router-link>
   </div>
 </template>
 
@@ -17,16 +17,16 @@ export default {
     return {
       componentList: [
         "Button",
-        "Input",
-        "Radio",
-        "Checkbox",
-        "Switch",
-        "Form",
-        "Pagination",
-        "Notice",
-        "Tree",
-        "Collapse",
-        "Carousel",
+        // "Input",
+        // "Radio",
+        // "Checkbox",
+        // "Switch",
+        // "Form",
+        // "Pagination",
+        // "Notice",
+        // "Tree",
+        // "Collapse",
+        // "Carousel",
       ],
     };
   },

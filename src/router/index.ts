@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import ComponentList from "../ComponentList.vue";
-// import Button from "./test/Button.vue";
+import Button from "@/test/Button.vue";
 // import Input from "./test/Input.vue";
 // import Radio from "./test/Radio.vue";
 // import Checkbox from "./test/Checkbox.vue";
@@ -17,11 +17,11 @@ const routes = [
     path: "/",
     component: ComponentList,
   },
-  // {
-  //   path: "/button",
-  //   component: Button,
-  //   name: "Button",
-  // },
+  {
+    path: "/button",
+    component: Button,
+    name: "Button",
+  },
   // {
   //   path: "/input",
   //   component: Input,
