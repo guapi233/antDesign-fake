@@ -1,6 +1,5 @@
-# antDesign-fake
-使用Vue仿antDesign组件库
-
+# component-exercise
+主分支使用Vue2版本编写，Vue3版本的实现请切换至vue3分支
 
 
 ## 正在进行
@@ -14,19 +13,6 @@
 - [x] 自定义箭头控件
 
 - [x] 自动滚动
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
