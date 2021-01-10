@@ -1,0 +1,619 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI测试 不同种类的按钮测试 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__emits": Object {},
+      "__props": Array [
+        Object {},
+        Array [],
+      ],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <button
+        class="c-button c-button--primary c-button--size__default"
+      >
+        
+        
+        
+        
+      </button>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+          "props": Object {},
+          "render": [Function],
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+          "props": Object {},
+          "render": [Function],
+        },
+      },
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "_uid": 1,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "block": false,
+    "circle": false,
+    "disabled": false,
+    "ghost": false,
+    "icon": "",
+    "loading": false,
+    "plain": false,
+    "round": false,
+    "size": "default",
+    "type": "primary",
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;
+
+exports[`UI测试 不同种类的按钮测试 2`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__emits": Object {},
+      "__props": Array [
+        Object {},
+        Array [],
+      ],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <button
+        class="c-button c-button--success c-button--size__default"
+      >
+        
+        
+        
+        
+      </button>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+          "props": Object {},
+          "render": [Function],
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+          "props": Object {},
+          "render": [Function],
+        },
+      },
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "_uid": 2,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "block": false,
+    "circle": false,
+    "disabled": false,
+    "ghost": false,
+    "icon": "",
+    "loading": false,
+    "plain": false,
+    "round": false,
+    "size": "default",
+    "type": "success",
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;
+
+exports[`UI测试 不同种类的按钮测试 3`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__emits": Object {},
+      "__props": Array [
+        Object {},
+        Array [],
+      ],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <button
+        class="c-button c-button--info c-button--size__default"
+      >
+        
+        
+        
+        
+      </button>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+          "props": Object {},
+          "render": [Function],
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+          "props": Object {},
+          "render": [Function],
+        },
+      },
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "_uid": 3,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "block": false,
+    "circle": false,
+    "disabled": false,
+    "ghost": false,
+    "icon": "",
+    "loading": false,
+    "plain": false,
+    "round": false,
+    "size": "default",
+    "type": "info",
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;
+
+exports[`UI测试 不同种类的按钮测试 4`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__emits": Object {},
+      "__props": Array [
+        Object {},
+        Array [],
+      ],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <button
+        class="c-button c-button--danger c-button--size__default"
+      >
+        
+        
+        
+        
+      </button>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+          "props": Object {},
+          "render": [Function],
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+          "props": Object {},
+          "render": [Function],
+        },
+      },
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "_uid": 4,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "block": false,
+    "circle": false,
+    "disabled": false,
+    "ghost": false,
+    "icon": "",
+    "loading": false,
+    "plain": false,
+    "round": false,
+    "size": "default",
+    "type": "danger",
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;
+
+exports[`UI测试 基础结构测试 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__emits": Object {},
+      "__props": Array [
+        Object {},
+        Array [],
+      ],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <button
+        class="c-button c-button--default c-button--size__default"
+      >
+        
+        
+        
+        
+      </button>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+          "props": Object {},
+          "render": [Function],
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+          "props": Object {},
+          "render": [Function],
+        },
+      },
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "_uid": 0,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "block": false,
+    "circle": false,
+    "disabled": false,
+    "ghost": false,
+    "icon": "",
+    "loading": false,
+    "plain": false,
+    "round": false,
+    "size": "default",
+    "type": "default",
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;
+
+exports[`UI测试 朴素按钮测试 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__emits": Object {},
+      "__props": Array [
+        Object {},
+        Array [],
+      ],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <button
+        class="c-button c-button--default c-button--size__default is-plain"
+      >
+        
+        
+        
+        
+      </button>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+          "props": Object {},
+          "render": [Function],
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+          "props": Object {},
+          "render": [Function],
+        },
+      },
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__emits": null,
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "_uid": 5,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "block": false,
+    "circle": false,
+    "disabled": false,
+    "ghost": false,
+    "icon": "",
+    "loading": false,
+    "plain": true,
+    "round": false,
+    "size": "default",
+    "type": "default",
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;
