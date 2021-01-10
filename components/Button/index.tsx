@@ -57,7 +57,7 @@ const CButton = defineComponent({
   } as Prop,
   setup(props, { emit, slots }) {
     const fullWidth = computed(() => {
-      return props.block ? `width: "100%";` : "";
+      return props.block ? `width: 100%;` : "";
     });
 
     const showLoading = computed(() => {
