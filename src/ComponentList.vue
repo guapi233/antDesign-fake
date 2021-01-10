@@ -1,11 +1,13 @@
 <template>
   <div class="componet-list">
-    <router-link
+    <p
       v-for="component in componentList"
       :key="component"
       :to="{ name: component }"
       class="component-link"
-    >{{ component }}</router-link>
+    >
+      {{ component }}
+    </p>
   </div>
 </template>
 
